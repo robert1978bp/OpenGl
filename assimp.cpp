@@ -1,7 +1,7 @@
 // loads .obj, .mtl and its related texture file (need to be in the same folder)
 // specify .obj at compile
 // compile code with UCRT64 env.:
-// g++ -o demo.exe demo.cpp glad.c -I/ucrt64/include -L/ucrt64/lib -lglfw3 -lOpenGL32 -lglu32 -lfreeglut -lglew32 -l:libassimp.dll.a -lgdi32 && demo models/model.obj
+// g++ -o demo.exe demo.cpp glad.c -I/ucrt64/include -L/ucrt64/lib -lglfw3 -lOpenGL32 -l:libassimp.dll.a -lgdi32 && demo model_viewer/box2.obj
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -279,10 +279,7 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    else
-    {
-        std::cout << "failed to load texture" << std::endl;
-    }
+
     glfwMakeContextCurrent(window);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
